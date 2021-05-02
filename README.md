@@ -41,24 +41,27 @@
 
 ### 2. Screen Archetypes
 
-* Login/Register Screen (Simonne)
+* Login/Register Screen
     * User signs up or logs into their account
-* Find Friends Screen (Tiff)
+* Find Friends Screen
     * User can search for friends to follow
-* Create Post (Farnia)
+* Create Post
     * Search Screen
         * User can search for a song to post
     * Details Screen
         * User can write a caption and share it to their followers
-* Friend Feed Screen (Sravya)
+* Friend Feed Screen
     * User can scroll through their feed and play songs
-    * User can comment on their friends post
-* Post Details Screen (Sravya)
+    * User can save posts
+    * User can add songs to a playlist
+    * User can open song on Spotify
+* Post Details Screen
     * User can comment on their friends post
     * User can scroll through comments on their friends' post
     * User can play full song instead of snippet
-* Profile Screen (Tiff)
+* Profile Screen
     * User can view their music profile
+    * User can see their saved posts
     * User can see their shared posts
     * User can see their top 10 song
     * User can see their followers and following
@@ -80,11 +83,14 @@
         * Search
         * Details
     * Post Details
+    * Open song on Spotify
+    * Add to playlist
 * Profile
     * Followers
     * Following
     * Shared posts
     * Top 10 Songs
+    * Saved posts
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
