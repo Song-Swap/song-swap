@@ -94,7 +94,11 @@
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="wireframes/settings_front.jpg" width=600>
+<img src="wireframes/feed_details.jpg" width=600>
+<img src="wireframes/friends_profile.jpg" width=600>
+<img src="wireframes/create_flow.jpg" width=600>
+
 
 ## Schema 
 [This section will be completed in Unit 9]
