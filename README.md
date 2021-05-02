@@ -93,7 +93,6 @@
     * Saved posts
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
 <img src="wireframes/settings_front.png" width=600>
 <img src="wireframes/feed_details.png" width=600>
 <img src="wireframes/friends_profile.jpg" width=600>
