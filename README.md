@@ -65,7 +65,7 @@
     * User can see their shared posts
     * User can see their top 10 song
     * User can see their followers and following
-* Settings Screen (Simonne)
+* Settings Screen
     * User can edit their app-wide and profile settings
 
 ### 3. Navigation
