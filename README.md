@@ -65,7 +65,7 @@
     * User can see their shared posts
     * User can see their top 10 song
     * User can see their followers and following
-* Settings Screen (Simonne)
+* Settings Screen
     * User can edit their app-wide and profile settings
 
 ### 3. Navigation
@@ -93,8 +93,11 @@
     * Saved posts
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="wireframes/settings_front.png" width=600>
+<img src="wireframes/feed_details.png" width=600>
+<img src="wireframes/friends_profile.jpg" width=600>
+<img src="wireframes/create_flow.jpg" width=600>
+
 
 ## Schema 
 [This section will be completed in Unit 9]
