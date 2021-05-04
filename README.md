@@ -93,10 +93,7 @@
     * Saved posts
 
 ## Wireframes
-<img src="wireframes/settings_front.png" width=600>
-<img src="wireframes/feed_details.png" width=600>
-<img src="wireframes/friends_profile.jpg" width=600>
-<img src="wireframes/create_flow.jpg" width=600>
+<img src="wireframes/wireframe.png" width=1000>
 
 
 ## Schema 
