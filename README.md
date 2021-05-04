@@ -93,7 +93,7 @@
     * Saved posts
 
 ## Wireframes
-<img src="wireframes/wireframe.png" width=1000>
+<img src="wireframes/wireframe.png" width=700>
 
 
 ## Schema 
