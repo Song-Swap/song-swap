@@ -97,7 +97,9 @@
 
 
 ## Schema 
-[This section will be completed in Unit 9]
+<img width="719" alt="Screen Shot 2021-05-09 at 7 27 32 PM" src="https://user-images.githubusercontent.com/29528135/117598470-b7fd2580-b0fc-11eb-9c09-788d7f15b060.png">
+
+
 ### Models
 [Add table of models]
 ### Networking
