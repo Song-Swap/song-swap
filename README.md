@@ -97,7 +97,7 @@
 
 
 ## Schema 
-<img width="719" alt="Screen Shot 2021-05-09 at 7 27 32 PM" src="https://user-images.githubusercontent.com/29528135/117598470-b7fd2580-b0fc-11eb-9c09-788d7f15b060.png">
+<img width="700" alt="Screen Shot 2021-05-09 at 7 29 55 PM" src="https://user-images.githubusercontent.com/29528135/117598605-f7c40d00-b0fc-11eb-8312-78d9b26c5399.png">
 
 
 ### Models
