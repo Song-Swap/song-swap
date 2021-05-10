@@ -101,30 +101,137 @@
 
 ### Networking
 * Login Screen
-   * (GET) User logs in through Spotify API
+   * (GET)(External) User logs in through Spotify API
 * Find Friends Screen
-   * (GET) User searches for friends by Spotify display name
+   * (GET)(External) User searches for friends by Spotify display name
 * Create Post
    * Search Screen
-      * (GET) User searches for Spotify song by title
+      * (GET)(External) User searches for Spotify song by title
    * Details & Confirmation Screen
       * (POST) User creates a new post
+         ```
+        let post = PFObject(className:"Posts")
+        ...
+        post.saveInBackground { (success, error) in
+            if success {
+               ...
+            } else {
+                print(error!)
+            }
+        }
+         ``` 
 * Friend Feed Screen
-   * (GET) User listens to songs as they scroll (via posts table)
+   * (GET)(External) User listens to songs as they scroll (via posts table)
+   * (GET) User sees posts on their feed
+      * Find list of followers
+      * Find all posts from followers
+         * Find whether posts are liked or not
+      * Order by time (descending)
    * (POST) User can save posts from their feed to their saved library
-   * (POST) User can add songs to a Spotify playlist
-   * (GET) User can open song on Spotify through their API
+       ```
+        let like = PFObject(className:"Likes")
+        ...
+        like.saveInBackground { (success, error) in
+            if success {
+               ...
+            } else {
+                print(error!)
+            }
+        }
+        ``` 
+   * (POST)(External) User can add songs to a Spotify playlist
+   * (GET)(External) User can open song on Spotify through their API
 * Post Details Screen
    * (POST) User comments on their friends post
+       ```
+        let comment = PFObject(className:"Comments")
+        ...
+        comment.saveInBackground { (success, error) in
+            if success {
+               ...
+            } else {
+                print(error!)
+            }
+        }
+        ``` 
    * (GET) User views comments on their friends' post
-   * (GET) User plays full song instead of snippet
+       ```
+         let query = PFQuery(className:"Comments")
+         query.whereKey("post", equalTo: currentPost)
+         query.order(byDescending: "time")
+         query.findObjectsInBackground { (comments: [PFObject]?, error: Error?) in
+            if let error = error {
+               print(error.localizedDescription)
+            } else if let comments = comments {
+               print("Successfully retrieved \(comments.count) comments.")
+               ...
+            }
+         }
+        ``` 
+   * (GET)(External) User plays full song instead of snippet
 * Profile Screen
-   * (GET) User views their music profile
    * (GET) User sees their saved posts
-   * (GET) User sees their shared post
-   * (GET) User sees their top 10 songs
+        ```
+         posts = []
+         let query = PFQuery(className:"Likes")
+         query.whereKey("user", equalTo: currentUser)
+         query.findObjectsInBackground { (comments: [PFObject]?, error: Error?) in
+            if let error = error {
+               print(error.localizedDescription)
+            } else if let likes = likes {
+               for like in likes {
+                  let query = PFQuery(className:"Posts")
+                  query.whereKey("id", equalTo: like["post"])
+                  ...
+                  posts.append(post)
+                  ...
+               }
+            }
+         }
+       ``` 
+   * (GET) User sees their shared posts
+        ```
+         let query = PFQuery(className:"Posts")
+         query.whereKey("user", equalTo: currentUser)
+         query.order(byDescending: "time")
+         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+            if let error = error {
+               print(error.localizedDescription)
+            } else if let posts = posts {
+               print("Successfully retrieved \(posts.count) posts.")
+               ...
+            }
+         }
+        ``` 
+   * (GET)(External) User sees their top 10 songs
    * (GET) User sees their followers
+        ```
+         let query = PFQuery(className:"Followers")
+         query.whereKey("followed", equalTo: currentUser)
+         query.findObjectsInBackground { (f: [PFObject]?, error: Error?) in
+            if let error = error {
+               print(error.localizedDescription)
+            } else if let f = f {
+               print("Successfully retrieved \(f.count) f.")
+               ...
+            }
+         }
+        ``` 
    * (GET) User sees accounts they follow
+        ```
+         let query = PFQuery(className:"Followers")
+         query.whereKey("following", equalTo: currentUser)
+         query.findObjectsInBackground { (f: [PFObject]?, error: Error?) in
+            if let error = error {
+               print(error.localizedDescription)
+            } else if let f = f {
+               print("Successfully retrieved \(f.count) f.")
+               ...
+            }
+         }
+        ``` 
 * Settings Screen
    * (GET) User’s sees their current settings
+      * Settings table TBD 
    * (PUT) User edits their app-wide and profile settings
+      * Settings table TBD 
