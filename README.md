@@ -19,7 +19,7 @@
 
 ## Product Spec
 
-### 1. User Stories (Required and Optional)
+### User Stories (Required and Optional)
 
 **Required Must-have Stories**
 
@@ -39,7 +39,7 @@
 * User sends a song they want to recommend to a friend
 * User can edit their app-wide and profile settings
 
-### 2. Screen Archetypes
+### Screen Archetypes
 
 * Login/Register Screen
     * User signs up or logs into their account
@@ -68,7 +68,7 @@
 * Settings Screen
     * User can edit their app-wide and profile settings
 
-### 3. Navigation
+### Navigation
 
 **Tab Navigation** (Tab to Screen)
 
@@ -95,14 +95,9 @@
 ## Wireframes
 <img src="wireframes/wireframe.png" width=700>
 
-
 ## Schema 
+### Models
 <img width="700" alt="Screen Shot 2021-05-09 at 7 29 55 PM" src="https://user-images.githubusercontent.com/29528135/117598605-f7c40d00-b0fc-11eb-8312-78d9b26c5399.png">
 
-
-### Models
-[Add table of models]
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+// table goes here
