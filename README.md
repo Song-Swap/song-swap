@@ -97,7 +97,7 @@
 
 ## Schema 
 ### Models
-<img width="700" alt="Screen Shot 2021-05-09 at 7 29 55 PM" src="https://user-images.githubusercontent.com/29528135/117598605-f7c40d00-b0fc-11eb-8312-78d9b26c5399.png">
+<img width="692" alt="Screen Shot 2021-05-09 at 7 51 55 PM" src="https://user-images.githubusercontent.com/29528135/117600062-12e44c00-b100-11eb-85c0-5c419a9dddb2.png">
 
 ### Networking
 * Login Screen
