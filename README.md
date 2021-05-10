@@ -41,14 +41,14 @@
 
 ### Screen Archetypes
 
-* Login/Register Screen
+* Login Screen
     * User signs up or logs into their account
 * Find Friends Screen
     * User can search for friends to follow
 * Create Post
     * Search Screen
         * User can search for a song to post
-    * Details Screen
+    * Details & Confirmation Screen
         * User can write a caption and share it to their followers
 * Friend Feed Screen
     * User can scroll through their feed and play songs
@@ -100,4 +100,31 @@
 <img width="700" alt="Screen Shot 2021-05-09 at 7 29 55 PM" src="https://user-images.githubusercontent.com/29528135/117598605-f7c40d00-b0fc-11eb-8312-78d9b26c5399.png">
 
 ### Networking
-// table goes here
+* Login Screen
+   * (GET) User logs in through Spotify API
+* Find Friends Screen
+   * (GET) User searches for friends by Spotify display name
+* Create Post
+   * Search Screen
+      * (GET) User searches for Spotify song by title
+   * Details & Confirmation Screen
+      * (POST) User creates a new post
+* Friend Feed Screen
+   * (GET) User listens to songs as they scroll (via posts table)
+   * (POST) User can save posts from their feed to their saved library
+   * (POST) User can add songs to a Spotify playlist
+   * (GET) User can open song on Spotify through their API
+* Post Details Screen
+   * (POST) User comments on their friends post
+   * (GET) User views comments on their friends' post
+   * (GET) User plays full song instead of snippet
+* Profile Screen
+   * (GET) User views their music profile
+   * (GET) User sees their saved posts
+   * (GET) User sees their shared post
+   * (GET) User sees their top 10 songs
+   * (GET) User sees their followers
+   * (GET) User sees accounts they follow
+* Settings Screen
+   * (GET) User’s sees their current settings
+   * (PUT) User edits their app-wide and profile settings
