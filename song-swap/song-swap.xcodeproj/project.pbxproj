@@ -13,7 +13,7 @@
 		660CD4CD264CDD3000CBF0B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660CD4CB264CDD3000CBF0B7 /* Main.storyboard */; };
 		660CD4CF264CDD3300CBF0B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660CD4CE264CDD3300CBF0B7 /* Assets.xcassets */; };
 		660CD4D2264CDD3300CBF0B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660CD4D0264CDD3300CBF0B7 /* LaunchScreen.storyboard */; };
-		660CD4E8264CF16500CBF0B7 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660CD4E3264CEFB800CBF0B7 /* SpotifyiOS.framework */; };
+		6641468F2652264D00E7FC4E /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6641468C2652262E00E7FC4E /* SpotifyiOS.framework */; };
 		66948010264CF8850030F4F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6694800F264CF8850030F4F5 /* LoginViewController.swift */; };
 		66948012264CFB510030F4F5 /* SpotifyAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66948011264CFB510030F4F5 /* SpotifyAPICaller.swift */; };
 /* End PBXBuildFile section */
@@ -28,7 +28,7 @@
 		660CD4D1264CDD3300CBF0B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		660CD4D3264CDD3300CBF0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		660CD4DC264CE3CF00CBF0B7 /* song-swap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "song-swap-Bridging-Header.h"; sourceTree = "<group>"; };
-		660CD4E3264CEFB800CBF0B7 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = "/Users/simonnecontreras/iOS/song-swap/song-swap/../../../Downloads/SpotifyiOS.framework"; sourceTree = "<absolute>"; };
+		6641468C2652262E00E7FC4E /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
 		6694800F264CF8850030F4F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		66948011264CFB510030F4F5 /* SpotifyAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				660CD4E8264CF16500CBF0B7 /* SpotifyiOS.framework in Frameworks */,
+				6641468F2652264D00E7FC4E /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +51,7 @@
 				660CD4DC264CE3CF00CBF0B7 /* song-swap-Bridging-Header.h */,
 				660CD4C4264CDD3000CBF0B7 /* song-swap */,
 				660CD4C3264CDD3000CBF0B7 /* Products */,
-				660CD4E2264CEFB800CBF0B7 /* Frameworks */,
+				6641468E2652264D00E7FC4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +66,7 @@
 		660CD4C4264CDD3000CBF0B7 /* song-swap */ = {
 			isa = PBXGroup;
 			children = (
+				6641468C2652262E00E7FC4E /* SpotifyiOS.framework */,
 				660CD4D3264CDD3300CBF0B7 /* Info.plist */,
 				660CD4C5264CDD3000CBF0B7 /* AppDelegate.swift */,
 				660CD4C7264CDD3000CBF0B7 /* SceneDelegate.swift */,
@@ -79,10 +80,9 @@
 			path = "song-swap";
 			sourceTree = "<group>";
 		};
-		660CD4E2264CEFB800CBF0B7 /* Frameworks */ = {
+		6641468E2652264D00E7FC4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				660CD4E3264CEFB800CBF0B7 /* SpotifyiOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -313,7 +313,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../../Downloads",
+					"/Users/simonnecontreras/iOS/song-swap/song-swap/Frameworks",
+					"$(PROJECT_DIR)/song-swap",
 				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "song-swap/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -322,6 +325,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "sccontre.song-swap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "song-swap-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,7 +342,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../../Downloads",
+					"/Users/simonnecontreras/iOS/song-swap/song-swap/Frameworks",
+					"$(PROJECT_DIR)/song-swap",
 				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "song-swap/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -347,6 +354,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "sccontre.song-swap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "song-swap-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
