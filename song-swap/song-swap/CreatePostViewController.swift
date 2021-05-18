@@ -8,10 +8,13 @@
 import UIKit
 
 class CreatePostViewController: UIViewController {
-
+    
+    @IBOutlet var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        searchBar.searchBarStyle = .minimal 
         // Do any additional setup after loading the view.
     }
     
