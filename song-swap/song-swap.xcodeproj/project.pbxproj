@@ -16,6 +16,8 @@
 		6641468F2652264D00E7FC4E /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6641468C2652262E00E7FC4E /* SpotifyiOS.framework */; };
 		66948010264CF8850030F4F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6694800F264CF8850030F4F5 /* LoginViewController.swift */; };
 		66948012264CFB510030F4F5 /* SpotifyAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66948011264CFB510030F4F5 /* SpotifyAPICaller.swift */; };
+		93C6AD872653839A00B71098 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6AD862653839A00B71098 /* CreatePostViewController.swift */; };
+		93C6AD892653843000B71098 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6AD882653843000B71098 /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		6641468C2652262E00E7FC4E /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
 		6694800F264CF8850030F4F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		66948011264CFB510030F4F5 /* SpotifyAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPICaller.swift; sourceTree = "<group>"; };
+		93C6AD862653839A00B71098 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		93C6AD882653843000B71098 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +76,12 @@
 				660CD4C7264CDD3000CBF0B7 /* SceneDelegate.swift */,
 				660CD4C9264CDD3000CBF0B7 /* ViewController.swift */,
 				660CD4CB264CDD3000CBF0B7 /* Main.storyboard */,
+				93C6AD882653843000B71098 /* FeedViewController.swift */,
 				660CD4CE264CDD3300CBF0B7 /* Assets.xcassets */,
 				660CD4D0264CDD3300CBF0B7 /* LaunchScreen.storyboard */,
 				6694800F264CF8850030F4F5 /* LoginViewController.swift */,
 				66948011264CFB510030F4F5 /* SpotifyAPICaller.swift */,
+				93C6AD862653839A00B71098 /* CreatePostViewController.swift */,
 			);
 			path = "song-swap";
 			sourceTree = "<group>";
@@ -161,7 +167,9 @@
 				660CD4CA264CDD3000CBF0B7 /* ViewController.swift in Sources */,
 				660CD4C6264CDD3000CBF0B7 /* AppDelegate.swift in Sources */,
 				660CD4C8264CDD3000CBF0B7 /* SceneDelegate.swift in Sources */,
+				93C6AD872653839A00B71098 /* CreatePostViewController.swift in Sources */,
 				66948012264CFB510030F4F5 /* SpotifyAPICaller.swift in Sources */,
+				93C6AD892653843000B71098 /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +317,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B3S93XMH62;
+				DEVELOPMENT_TEAM = PA225W55TV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../../Downloads",
@@ -323,7 +331,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "sccontre.song-swap";
+				PRODUCT_BUNDLE_IDENTIFIER = "tmeng331.song-swap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "song-swap-Bridging-Header.h";
@@ -338,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B3S93XMH62;
+				DEVELOPMENT_TEAM = PA225W55TV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../../Downloads",
@@ -352,7 +360,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "sccontre.song-swap";
+				PRODUCT_BUNDLE_IDENTIFIER = "tmeng331.song-swap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "song-swap-Bridging-Header.h";
