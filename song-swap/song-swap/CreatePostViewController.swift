@@ -14,11 +14,19 @@ class CreatePostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchBar.searchBarStyle = .minimal 
+        searchBar.searchBarStyle = .minimal
+        searchBar.placeholder = "Find a Song"
         // Do any additional setup after loading the view.
     }
     
-
+    func loadSongs() {
+        let URL = "https://api.spotify.com/v1/search"
+        // authorization param?
+        let myParams = ["q": searchBar.text!,
+                        "type":"track",
+                        "limit":50] as [String : Any]
+    }
+    
     /*
     // MARK: - Navigation
 

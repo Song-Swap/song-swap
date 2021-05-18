@@ -85,18 +85,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCI-pR-OYC">
-                                <rect key="frame" x="346" y="20" width="41" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="AZJ-w9-DNS"/>
-                                    <constraint firstAttribute="height" constant="30" id="Eua-CD-dEg"/>
-                                </constraints>
-                                <state key="normal" title="Finish"/>
-                            </button>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gdq-Fg-PDv">
-                                <rect key="frame" x="27" y="59" width="360" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMP-OV-4tq">
                                 <rect key="frame" x="159" y="25" width="96" height="21"/>
                                 <constraints>
@@ -107,16 +95,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCI-pR-OYC">
+                                <rect key="frame" x="346" y="20" width="41" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="AZJ-w9-DNS"/>
+                                    <constraint firstAttribute="height" constant="30" id="Eua-CD-dEg"/>
+                                </constraints>
+                                <state key="normal" title="Finish"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y56-fL-wN2">
+                                <rect key="frame" x="0.0" y="118" width="414" height="724"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gdq-Fg-PDv">
+                                <rect key="frame" x="11" y="59" width="390" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c4I-yy-5jG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gdq-Fg-PDv" firstAttribute="top" secondItem="CCI-pR-OYC" secondAttribute="bottom" constant="9" id="32b-2s-aFg"/>
+                            <constraint firstItem="y56-fL-wN2" firstAttribute="trailing" secondItem="c4I-yy-5jG" secondAttribute="trailing" id="7tn-Bm-00J"/>
                             <constraint firstItem="c4I-yy-5jG" firstAttribute="trailing" secondItem="CCI-pR-OYC" secondAttribute="trailing" constant="27" id="8Vh-3r-Ya4"/>
-                            <constraint firstItem="c4I-yy-5jG" firstAttribute="trailing" secondItem="gdq-Fg-PDv" secondAttribute="trailing" constant="27" id="8bj-oq-Fox"/>
+                            <constraint firstItem="c4I-yy-5jG" firstAttribute="trailing" secondItem="gdq-Fg-PDv" secondAttribute="trailing" constant="13" id="8bj-oq-Fox"/>
                             <constraint firstItem="fMP-OV-4tq" firstAttribute="top" secondItem="c4I-yy-5jG" secondAttribute="top" constant="25" id="AKK-jl-8Gw"/>
                             <constraint firstItem="fMP-OV-4tq" firstAttribute="centerX" secondItem="cGL-J1-qL0" secondAttribute="centerX" id="BYP-Ih-foX"/>
-                            <constraint firstItem="gdq-Fg-PDv" firstAttribute="leading" secondItem="c4I-yy-5jG" secondAttribute="leading" constant="27" id="WVj-k4-cjV"/>
+                            <constraint firstItem="y56-fL-wN2" firstAttribute="leading" secondItem="c4I-yy-5jG" secondAttribute="leading" id="MS1-q6-Zt7"/>
+                            <constraint firstItem="y56-fL-wN2" firstAttribute="top" secondItem="gdq-Fg-PDv" secondAttribute="bottom" constant="8" id="OPA-13-GL1"/>
+                            <constraint firstItem="gdq-Fg-PDv" firstAttribute="leading" secondItem="c4I-yy-5jG" secondAttribute="leading" constant="11" id="WVj-k4-cjV"/>
+                            <constraint firstAttribute="bottom" secondItem="y56-fL-wN2" secondAttribute="bottom" id="gia-6C-nAZ"/>
                             <constraint firstItem="CCI-pR-OYC" firstAttribute="top" secondItem="c4I-yy-5jG" secondAttribute="top" constant="20" id="qbs-Xb-Dyj"/>
                         </constraints>
                     </view>
