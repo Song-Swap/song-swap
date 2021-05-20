@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Alamofire
 
-class CreatePostViewController: UIViewController {
+class CreatePostViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet var searchBar: UISearchBar!
     
@@ -16,25 +17,29 @@ class CreatePostViewController: UIViewController {
 
         searchBar.searchBarStyle = .minimal
         searchBar.placeholder = "Find a Song"
-        // Do any additional setup after loading the view.
+        searchBar.delegate = self
     }
     
     func loadSongs() {
         let URL = "https://api.spotify.com/v1/search"
-        // authorization param?
-        let myParams = ["q": searchBar.text!,
+
+        let defaults = UserDefaults.standard
+        let accessToken = defaults.object(forKey: "access_token")
+        let headers : HTTPHeaders = ["Authorization" : "Bearer \(accessToken!)",
+                                     "Content-Type" : "application/x-www-form-urlencoded"]
+
+        let parameters = ["q": searchBar.text!,
                         "type":"track",
                         "limit":50] as [String : Any]
+        
+        AF.request(URL, method: .get, parameters: parameters, headers: headers).responseJSON { response in
+            print(response.result)
+        }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if (searchBar.text != nil) {
+            loadSongs()
+        }
     }
-    */
-
 }

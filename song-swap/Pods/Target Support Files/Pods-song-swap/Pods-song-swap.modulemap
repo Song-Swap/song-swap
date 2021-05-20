@@ -1,0 +1,6 @@
+framework module Pods_song_swap {
+  umbrella header "Pods-song-swap-umbrella.h"
+
+  export *
+  module * { export * }
+}
