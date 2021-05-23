@@ -31,7 +31,7 @@
 * User customizes their profile page with favorite songs
 - [x] User searches for and posts a song they like to share with their friends - **SPRINT 2**
 
-![](https://media.giphy.com/media/trzHgsTPPTeOexSImy/giphy.gif)
+![](https://media.giphy.com/media/ceDxHv40jOu2HEYxuM/giphy.gif)
 
 * User comments on a friend's post
 * User plays a song their friend shared natively in the app
