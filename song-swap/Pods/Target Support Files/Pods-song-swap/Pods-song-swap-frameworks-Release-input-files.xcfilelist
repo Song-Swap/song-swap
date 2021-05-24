@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-song-swap/Pods-song-swap-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework
+${BUILT_PRODUCTS_DIR}/Parse/Parse.framework

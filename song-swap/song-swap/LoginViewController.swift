@@ -7,31 +7,64 @@
 
 import UIKit
 import Alamofire
+import Parse
 
 class LoginViewController: UIViewController {
+    
+    
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    @IBAction func onLoginButton(_ sender: Any) {
-        let parameters = ["client_id" : "6f136c586d624386a2700f8b8127c012",
-                          "client_secret" : "850f3952b3fa41d79d1fff03ef6eed45",
-                          "grant_type" : "client_credentials"]
-
-        AF.request("https://accounts.spotify.com/api/token", method: .post, parameters: parameters).responseJSON(completionHandler: {
-            response in
-            switch response.result {
-                case .success(let value):
-                    if let json = value as? [String: Any] {
-                        let defaults = UserDefaults.standard
-                        print(json["access_token"]!)
-                        defaults.setValue(json["access_token"], forKey: "access_token")
-                        self.performSegue(withIdentifier: "loginToHome", sender: self)
-                    }
-                case .failure(let error):
-                    print(error)
+    @IBAction func onSignUp(_ sender: Any) {
+        let user = PFUser()
+        user.username = usernameField.text
+        user.password = passwordField.text
+        
+        user.signUpInBackground { (success, error) in
+            if success{
+                self.performSegue(withIdentifier: "loginToHome", sender: nil)
+            } else {
+                print("Error: \(String(describing: error?.localizedDescription))")
             }
-        })
+        }
     }
+    
+    @IBAction func onLoginButton(_ sender: Any) {
+        let username = usernameField.text!
+        let password = passwordField.text!
+        
+        PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
+            if user != nil {
+                let parameters = ["client_id" : "6f136c586d624386a2700f8b8127c012",
+                                  "client_secret" : "850f3952b3fa41d79d1fff03ef6eed45",
+                                  "grant_type" : "client_credentials"]
+                
+                AF.request("https://accounts.spotify.com/api/token", method: .post, parameters: parameters).responseJSON(completionHandler: {
+                    response in
+                    switch response.result {
+                        case .success(let value):
+                            
+                            if let json = value as? [String: Any] {
+                                let defaults = UserDefaults.standard
+                                print(json["access_token"]!)
+                                defaults.setValue(json["access_token"], forKey: "access_token")
+                                self.performSegue(withIdentifier: "loginToHome", sender: self)
+                            }
+                        case .failure(let error):
+                            print(error)
+                    }
+                })
+            } else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+            }
+        }
+        
+
+    }
+    
+    
     
 }
