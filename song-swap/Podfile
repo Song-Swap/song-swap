@@ -8,5 +8,6 @@ target 'song-swap' do
   # Pods for song-swap
   pod 'Parse'
   pod "Alamofire"
+  pod "AlamofireImage"
 
 end
