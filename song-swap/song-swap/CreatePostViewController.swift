@@ -8,9 +8,10 @@
 import UIKit
 import Alamofire
 
-class CreatePostViewController: UIViewController, UISearchBarDelegate {
+class CreatePostViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,10 @@ class CreatePostViewController: UIViewController, UISearchBarDelegate {
         searchBar.searchBarStyle = .minimal
         searchBar.placeholder = "Find a Song"
         searchBar.delegate = self
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorColor = UIColor.clear;
     }
     
     func loadSongs() {
@@ -34,6 +39,7 @@ class CreatePostViewController: UIViewController, UISearchBarDelegate {
         
         AF.request(URL, method: .get, parameters: parameters, headers: headers).responseJSON { response in
             print(response.result)
+            self.tableView.reloadData()
         }
     }
     
@@ -42,4 +48,14 @@ class CreatePostViewController: UIViewController, UISearchBarDelegate {
             loadSongs()
         }
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CreatePostTableViewCell") as! CreatePostTableViewCell
+        return cell
+    }
+    
 }

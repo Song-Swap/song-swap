@@ -18,6 +18,7 @@
 		77B978C924B8E8AE172E5562 /* Pods_song_swap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D44CF43B49B6D2E5491B173 /* Pods_song_swap.framework */; };
 		93C6AD872653839A00B71098 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6AD862653839A00B71098 /* CreatePostViewController.swift */; };
 		93C6AD892653843000B71098 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6AD882653843000B71098 /* FeedViewController.swift */; };
+		93F5DBB826622F9B0068666C /* CreatePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F5DBB726622F9B0068666C /* CreatePostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		6694800F264CF8850030F4F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93C6AD862653839A00B71098 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		93C6AD882653843000B71098 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		93F5DBB726622F9B0068666C /* CreatePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostTableViewCell.swift; sourceTree = "<group>"; };
 		C1B88E7440D6A696D5199F7C /* Pods-song-swap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-song-swap.release.xcconfig"; path = "Target Support Files/Pods-song-swap/Pods-song-swap.release.xcconfig"; sourceTree = "<group>"; };
 		D7FCCC390F0FEB9C758BB499 /* Pods-song-swap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-song-swap.debug.xcconfig"; path = "Target Support Files/Pods-song-swap/Pods-song-swap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 				660CD4D0264CDD3300CBF0B7 /* LaunchScreen.storyboard */,
 				6694800F264CF8850030F4F5 /* LoginViewController.swift */,
 				93C6AD862653839A00B71098 /* CreatePostViewController.swift */,
+				93F5DBB726622F9B0068666C /* CreatePostTableViewCell.swift */,
 			);
 			path = "song-swap";
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66948010264CF8850030F4F5 /* LoginViewController.swift in Sources */,
+				93F5DBB826622F9B0068666C /* CreatePostTableViewCell.swift in Sources */,
 				660CD4CA264CDD3000CBF0B7 /* ViewController.swift in Sources */,
 				660CD4C6264CDD3000CBF0B7 /* AppDelegate.swift in Sources */,
 				660CD4C8264CDD3000CBF0B7 /* SceneDelegate.swift in Sources */,

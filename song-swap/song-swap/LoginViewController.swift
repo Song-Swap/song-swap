@@ -38,8 +38,8 @@ class LoginViewController: UIViewController {
         
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if user != nil {
-                let parameters = ["client_id" : "6f136c586d624386a2700f8b8127c012",
-                                  "client_secret" : "850f3952b3fa41d79d1fff03ef6eed45",
+                let parameters = ["client_id" : "6c3984f1051543b280ec9a840492850c",
+                                  "client_secret" : "b7d3fa0e55564dd1a086a1b053222bd0",
                                   "grant_type" : "client_credentials"]
                 
                 AF.request("https://accounts.spotify.com/api/token", method: .post, parameters: parameters).responseJSON(completionHandler: {
