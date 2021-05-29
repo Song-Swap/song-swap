@@ -25,7 +25,7 @@
 
 - [x] User can login to the application - **SPRINT 1**
 
-![](wireframes/login.gif)
+<img src="wireframes/login.gif" width=300/>
 
 * User searches for and adds friends
 * User customizes their profile page with favorite songs
