@@ -25,13 +25,14 @@
 
 - [x] User can login to the application - **SPRINT 1**
 
-<img src="wireframes/login.gif" width=700>
+![](wireframes/login.gif)
 
 * User searches for and adds friends
 * User customizes their profile page with favorite songs
-- [x] User searches for and posts a song they like to share with their friends - **SPRINT 2**
+- [x] User searches for and posts a song they like to share with their friends - **SPRINT 2, SPRINT 3**
 
 ![](https://media.giphy.com/media/ceDxHv40jOu2HEYxuM/giphy.gif)
+![](https://media.giphy.com/media/P7XTC1FAZjbQ9Oo1Xk/giphy.gif)
 
 * User comments on a friend's post
 * User plays a song their friend shared natively in the app
