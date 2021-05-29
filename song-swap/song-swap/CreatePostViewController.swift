@@ -7,11 +7,14 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class CreatePostViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    
+    var tableItems = [NSDictionary]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,7 @@ class CreatePostViewController: UIViewController, UISearchBarDelegate, UITableVi
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorColor = UIColor.clear;
+        tableView.keyboardDismissMode = .onDrag
     }
     
     func loadSongs() {
@@ -39,7 +43,17 @@ class CreatePostViewController: UIViewController, UISearchBarDelegate, UITableVi
         
         AF.request(URL, method: .get, parameters: parameters, headers: headers).responseJSON { response in
             print(response.result)
-            self.tableView.reloadData()
+
+            switch response.result {
+                case .success(let value):
+                    if let json = value as? [String: Any] {
+                        self.tableItems = (json["tracks"] as! NSDictionary)["items"] as! [NSDictionary]
+                        print(self.tableItems)
+                        self.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+            }
         }
     }
     
@@ -50,11 +64,26 @@ class CreatePostViewController: UIViewController, UISearchBarDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tableItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CreatePostTableViewCell") as! CreatePostTableViewCell
+        
+        let songInfo = tableItems[indexPath.row]
+
+        let albumImageURL = URL(string:((songInfo["album"] as! NSDictionary)["images"] as! [NSDictionary])[1]["url"] as! String)!
+        cell.albumImage.af.setImage(withURL: albumImageURL)
+        cell.songTitle.text = (songInfo["name"] as! String)
+
+        let artists = songInfo["artists"] as! [NSDictionary]
+        let artistsText = artists.map({(artist) -> String in
+            return (artist["name"] as? String ?? "")
+        })
+        cell.songArtist.text = artistsText.joined(separator: ", ")
+        
+        cell.spotifyURL = URL(string: (songInfo["external_urls"] as! NSDictionary)["spotify"] as! String)
+
         return cell
     }
     

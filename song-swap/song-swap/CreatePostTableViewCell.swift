@@ -9,6 +9,12 @@ import UIKit
 
 class CreatePostTableViewCell: UITableViewCell {
 
+    @IBOutlet var albumImage: UIImageView!
+    @IBOutlet var songTitle: UILabel!
+    @IBOutlet var songArtist: UILabel!
+    
+    var spotifyURL: URL!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -40,9 +46,15 @@ class CreatePostTableViewCell: UITableViewCell {
         backgroundView.layer.shadowOffset = CGSize(width: 3, height: 3)
         backgroundView.layer.shadowOpacity = 0.7
         backgroundView.layer.shadowRadius = 4.0
+        
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+    @IBAction func onSpotifyIconClick(_ sender: Any) {
+        UIApplication.shared.open(spotifyURL)
     }
 }
