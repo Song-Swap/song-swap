@@ -9,5 +9,6 @@ target 'song-swap' do
   pod 'Parse'
   pod "Alamofire"
   pod "AlamofireImage"
+  pod "SDWebImage"
 
 end

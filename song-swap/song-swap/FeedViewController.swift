@@ -7,6 +7,8 @@
 
 import UIKit
 import Parse
+import Alamofire
+import AlamofireImage
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -21,19 +23,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewDidAppear(true)
         
         let query = PFQuery(className: "Posts")
         query.includeKey("author")
-        query.limit = 20
+        query.limit = 10
         
         query.findObjectsInBackground { (posts, error) in
             if posts != nil{
                 self.posts = posts!
                 self.tableView.reloadData()
-            }
-            else {
-                
             }
         }
     }
@@ -50,6 +49,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.usernameLabel.text = user.username
         cell.captionLabel.text = post["caption"] as? String
         cell.postLabel.text = post["song_title"] as? String
+        cell.artistLabel.text = post["artist"] as? String
         let songURL = URL(string:(post["URL"] as! String))!
         cell.photoView.af.setImage(withURL: songURL)
         

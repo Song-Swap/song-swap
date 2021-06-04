@@ -21,7 +21,6 @@ class PostViewController: UIViewController, UITextViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let artists = item["artists"] as! [NSDictionary]
         let artistsText = artists.map({(artist) -> String in
             return (artist["name"] as? String ?? "")

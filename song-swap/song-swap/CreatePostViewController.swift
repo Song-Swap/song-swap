@@ -42,13 +42,13 @@ class CreatePostViewController: UIViewController, UISearchBarDelegate, UITableVi
                         "limit":50] as [String : Any]
         
         AF.request(URL, method: .get, parameters: parameters, headers: headers).responseJSON { response in
-            print(response.result)
+            //print(response.result)
 
             switch response.result {
                 case .success(let value):
                     if let json = value as? [String: Any] {
                         self.tableItems = (json["tracks"] as! NSDictionary)["items"] as! [NSDictionary]
-                        print(self.tableItems)
+                        //print(self.tableItems)
                         self.tableView.reloadData()
                     }
                 case .failure(let error):
