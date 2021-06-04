@@ -510,7 +510,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Friends" id="8tb-BU-PDr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FzR-6G-fHx"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FzR-6G-fHx">
+                            <connections>
+                                <segue destination="UH0-By-hDj" kind="presentation" identifier="AddFriendsModal" id="YNO-Vq-MbI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="LJF-1T-V3q" id="D1k-1p-fVf"/>
@@ -523,7 +527,6 @@
         <!--Profile-->
         <scene sceneID="mYP-49-pBO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uON-bj-KgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="1MM-dt-kvD" customClass="ProfileViewController" customModule="song_swap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rJ5-dp-Wda">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -599,6 +602,7 @@
                         <outlet property="usernameLabel" destination="5wC-Jw-crs" id="XTr-w5-jIp"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uON-bj-KgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2981.1594202898555" y="1109.5982142857142"/>
         </scene>
@@ -714,6 +718,112 @@
             </objects>
             <point key="canvasLocation" x="747.82608695652175" y="1828.7946428571427"/>
         </scene>
+        <!--Add Friends View Controller-->
+        <scene sceneID="49F-MA-LAM">
+            <objects>
+                <viewController id="UH0-By-hDj" customClass="AddFriendsViewController" customModule="song_swap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lJb-Dh-irX" customClass="AddFriendsView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Friend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcA-ZA-b1v">
+                                <rect key="frame" x="158" y="25" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ER0-fF-9U7">
+                                <rect key="frame" x="20" y="20" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancel:" destination="UH0-By-hDj" eventType="touchUpInside" id="74a-OK-RYe"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="Xnw-tf-FRO">
+                                <rect key="frame" x="12" y="60" width="390" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Ma-vn-Ujn">
+                                <rect key="frame" x="0.0" y="121" width="414" height="721"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddFriendsTableViewCell" rowHeight="130" id="y6m-X1-vVc" customClass="AddFriendsTableViewCell" customModule="song_swap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y6m-X1-vVc" id="awK-AF-Nhu">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Spotify_Icon_RGB_Black" translatesAutoresizingMaskIntoConstraints="NO" id="WAI-Bh-jWD">
+                                                    <rect key="frame" x="20" y="18" width="93" height="93"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xi-kX-wDM">
+                                                    <rect key="frame" x="132" y="18" width="235" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhU-5j-hXU">
+                                                    <rect key="frame" x="267" y="58" width="100" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                    <state key="normal" title="Unfriend">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onUnfriend:" destination="y6m-X1-vVc" eventType="touchUpInside" id="G5T-MP-im9"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaW-qh-Yjq">
+                                                    <rect key="frame" x="132" y="58" width="100" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                    <state key="normal" title="Add Friends">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onAddButton:" destination="y6m-X1-vVc" eventType="touchUpInside" id="T3d-1f-ShG"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addButton" destination="jaW-qh-Yjq" id="wce-lg-6Zy"/>
+                                            <outlet property="unfriendButton" destination="YhU-5j-hXU" id="X4b-NV-ucn"/>
+                                            <outlet property="userPhoto" destination="WAI-Bh-jWD" id="g4k-64-hmV"/>
+                                            <outlet property="username" destination="9Xi-kX-wDM" id="mJX-bS-0RD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="C9Z-OI-EpN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xnw-tf-FRO" firstAttribute="top" secondItem="ER0-fF-9U7" secondAttribute="bottom" constant="10" id="4s1-H0-LVu"/>
+                            <constraint firstItem="NcA-ZA-b1v" firstAttribute="top" secondItem="C9Z-OI-EpN" secondAttribute="top" constant="25" id="BRx-vn-47a"/>
+                            <constraint firstItem="ER0-fF-9U7" firstAttribute="leading" secondItem="C9Z-OI-EpN" secondAttribute="leading" constant="20" id="D74-sW-LE9"/>
+                            <constraint firstItem="ER0-fF-9U7" firstAttribute="top" secondItem="C9Z-OI-EpN" secondAttribute="top" constant="20" id="EjE-Da-8SX"/>
+                            <constraint firstAttribute="bottom" secondItem="8Ma-vn-Ujn" secondAttribute="bottom" id="HvR-bP-bCd"/>
+                            <constraint firstItem="8Ma-vn-Ujn" firstAttribute="centerX" secondItem="Xnw-tf-FRO" secondAttribute="centerX" id="Iuw-p9-nzA"/>
+                            <constraint firstItem="C9Z-OI-EpN" firstAttribute="trailing" secondItem="Xnw-tf-FRO" secondAttribute="trailing" constant="12" id="XGy-Bl-a71"/>
+                            <constraint firstItem="8Ma-vn-Ujn" firstAttribute="leading" secondItem="lJb-Dh-irX" secondAttribute="leading" id="dat-hI-JlK"/>
+                            <constraint firstItem="8Ma-vn-Ujn" firstAttribute="top" secondItem="Xnw-tf-FRO" secondAttribute="bottom" constant="10" id="gT4-Ot-vqr"/>
+                            <constraint firstItem="Xnw-tf-FRO" firstAttribute="leading" secondItem="C9Z-OI-EpN" secondAttribute="leading" constant="12" id="nEz-Rd-H94"/>
+                            <constraint firstItem="NcA-ZA-b1v" firstAttribute="leading" secondItem="ER0-fF-9U7" secondAttribute="trailing" constant="90" id="wIR-lP-hbf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="Xnw-tf-FRO" id="XGC-7k-9fy"/>
+                        <outlet property="tableView" destination="8Ma-vn-Ujn" id="Gfm-Bk-EQ0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yc-ll-vsC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1789.8550724637682" y="1814.7321428571427"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="54i-nC-aKD">
             <objects>
@@ -771,11 +881,17 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

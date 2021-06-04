@@ -100,7 +100,12 @@ class AddFriendsViewController: UIViewController,
         
         return cell
     }
-
+    
+    
+    @IBAction func onCancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
