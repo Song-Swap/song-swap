@@ -49,9 +49,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let user = post["author"] as! PFUser
         cell.usernameLabel.text = user.username
         cell.captionLabel.text = post["caption"] as? String
-        
-        let albumPost = post["content"] as! NSDictionary
-        cell.postLabel.text = albumPost["name"] as? String
+        cell.postLabel.text = post["song_title"] as? String
         // cell.photoView =
         
         return cell

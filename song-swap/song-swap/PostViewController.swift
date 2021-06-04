@@ -56,11 +56,12 @@ class PostViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func onPost(_ sender: RoundButton) {
-        print("button was clicked")
         let post = PFObject(className: "Posts")
         post["caption"] = Comment.text!
         post["author"] = PFUser.current()!
-        post["content"] = item
+        post["song_title"] = SongTitle.text!
+        post["artist"] = Artist.text!
+        post["URL"] = ((item["album"] as! NSDictionary)["images"] as! [NSDictionary])[1]["url"] as! String
 
         post.saveInBackground{ (success, error) in
             if success {
@@ -68,9 +69,7 @@ class PostViewController: UIViewController, UITextViewDelegate {
                     let second = first.presentingViewController {
                             first.view.isHidden = true
                                 second.dismiss(animated: true)
-
                  }
-                print("saved!")
             } else {
                 print("error!")
             }
