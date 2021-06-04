@@ -9,6 +9,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Setup Profile-->
+        <scene sceneID="lWn-6a-9iP">
+            <objects>
+                <viewController title="Setup Profile" id="dtG-AP-5vA" customClass="SetupViewController" customModule="song_swap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VK8-aY-O9R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Mcn-rz-qJS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sKT-Ee-2Ui">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="2DW-zf-TbO">
+                            <connections>
+                                <action selector="onSaveSetup:" destination="dtG-AP-5vA" id="zyb-FF-5ty"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="cAy-6n-EaV" kind="presentation" identifier="setupToHome" modalPresentationStyle="fullScreen" id="YmC-8i-BOw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zVu-aJ-u4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="418.84057971014494" y="-866.51785714285711"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1er-7v-fCB">
             <objects>
@@ -26,7 +51,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMf-zf-JeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="907" y="-425"/>
+            <point key="canvasLocation" x="1815.9420289855075" y="-425.22321428571428"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
@@ -123,6 +148,7 @@
                     <connections>
                         <outlet property="passwordField" destination="TvN-9d-3g5" id="Eao-sU-Wa5"/>
                         <outlet property="usernameField" destination="NcH-cN-H3P" id="yqL-Mt-iJn"/>
+                        <segue destination="A6l-Oq-ts9" kind="presentation" identifier="signUpToSetup" modalPresentationStyle="fullScreen" id="7kW-aQ-oNO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -575,6 +601,24 @@
             </objects>
             <point key="canvasLocation" x="747.82608695652175" y="1828.7946428571427"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="54i-nC-aKD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A6l-Oq-ts9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R6g-3i-gq2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dtG-AP-5vA" kind="relationship" relationship="rootViewController" id="YPJ-fB-BQQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDF-N3-IWM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491.304347826087" y="-866.51785714285711"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="B0b-a2-iP1">
@@ -593,6 +637,9 @@
             <size key="intrinsicContentSize" width="76" height="39"/>
         </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="YmC-8i-BOw"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Screen Shot 2021-05-12 at 11.38.59 PM" width="932" height="806"/>
         <image name="Spotify_Icon_RGB_Black" width="709" height="709"/>
