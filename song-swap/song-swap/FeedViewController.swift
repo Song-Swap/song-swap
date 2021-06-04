@@ -50,7 +50,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.usernameLabel.text = user.username
         cell.captionLabel.text = post["caption"] as? String
         cell.postLabel.text = post["song_title"] as? String
-        // cell.photoView =
+        let songURL = URL(string:(post["URL"] as! String))!
+        cell.photoView.af.setImage(withURL: songURL)
         
         return cell
     }
