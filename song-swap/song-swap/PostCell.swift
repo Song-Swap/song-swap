@@ -14,6 +14,8 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     
+    var spotifyURL: URL!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -21,4 +23,9 @@ class PostCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    @IBAction func onSpotifyButton(_ sender: Any) {
+        UIApplication.shared.open(spotifyURL)
+    }
+    
 }

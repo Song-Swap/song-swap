@@ -56,6 +56,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let songURL = URL(string:(post["URL"] as! String))!
         cell.photoView.af.setImage(withURL: songURL)
         
+        cell.spotifyURL = URL(string: ((post["URL"] as? String)!))
+        
         return cell
     }
 
