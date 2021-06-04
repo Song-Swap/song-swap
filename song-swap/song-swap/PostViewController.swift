@@ -57,7 +57,11 @@ class PostViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func onPost(_ sender: RoundButton) {
         let post = PFObject(className: "Posts")
-        post["caption"] = Comment.text!
+        if Comment.text! == "Add a caption... " {
+            post["caption"] = ""
+        } else {
+            post["caption"] = Comment.text!
+        }
         post["author"] = PFUser.current()!
         post["song_title"] = SongTitle.text!
         post["artist"] = Artist.text!
