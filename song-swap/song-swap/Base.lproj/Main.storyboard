@@ -149,7 +149,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="362" id="PVN-ip-ulf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="362" id="PVN-ip-ulf" customClass="PostCell" customModule="song_swap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="362"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PVN-ip-ulf" id="2Z2-Fq-bw6">
@@ -193,6 +193,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="wyb-pv-54E" secondAttribute="trailing" constant="8" id="yGC-qU-3z9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="zUa-Kf-U51" id="eZ1-rJ-voe"/>
+                                            <outlet property="photoView" destination="O7J-ag-9BX" id="Dbp-Xr-YES"/>
+                                            <outlet property="postLabel" destination="wyb-pv-54E" id="4En-2c-XSQ"/>
+                                            <outlet property="usernameLabel" destination="Psc-dT-XOw" id="MqC-Da-0LR"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -208,6 +214,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="xYd-Vn-vbI" id="oXU-6Z-aau"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pan-hO-O9N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
