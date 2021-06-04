@@ -63,6 +63,20 @@ class CreatePostViewController: UIViewController, UISearchBarDelegate, UITableVi
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected cell")
+        performSegue(withIdentifier: "createToIndividual", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            guard let destinationVC = segue.destination as? PostViewController else {return}
+            let selectedRow = indexPath.row
+            destinationVC.item = tableItems[selectedRow]
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableItems.count
     }

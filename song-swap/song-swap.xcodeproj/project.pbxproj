@@ -16,6 +16,9 @@
 		660CD4CF264CDD3300CBF0B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660CD4CE264CDD3300CBF0B7 /* Assets.xcassets */; };
 		660CD4D2264CDD3300CBF0B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 660CD4D0264CDD3300CBF0B7 /* LaunchScreen.storyboard */; };
 		6641468F2652264D00E7FC4E /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6641468C2652262E00E7FC4E /* SpotifyiOS.framework */; };
+		668BB6B32669B85A003B253D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BB6B22669B85A003B253D /* RoundButton.swift */; };
+		668BB6B52669BA3A003B253D /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BB6B42669BA3A003B253D /* RoundTextField.swift */; };
+		668BB6B72669C108003B253D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BB6B62669C108003B253D /* PostViewController.swift */; };
 		66948010264CF8850030F4F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6694800F264CF8850030F4F5 /* LoginViewController.swift */; };
 		77B978C924B8E8AE172E5562 /* Pods_song_swap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D44CF43B49B6D2E5491B173 /* Pods_song_swap.framework */; };
 		93C6AD872653839A00B71098 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6AD862653839A00B71098 /* CreatePostViewController.swift */; };
@@ -37,6 +40,9 @@
 		660CD4D3264CDD3300CBF0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		660CD4DC264CE3CF00CBF0B7 /* song-swap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "song-swap-Bridging-Header.h"; sourceTree = "<group>"; };
 		6641468C2652262E00E7FC4E /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
+		668BB6B22669B85A003B253D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		668BB6B42669BA3A003B253D /* RoundTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
+		668BB6B62669C108003B253D /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		6694800F264CF8850030F4F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93C6AD862653839A00B71098 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		93C6AD882653843000B71098 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +109,9 @@
 				93F5DBB726622F9B0068666C /* CreatePostTableViewCell.swift */,
 				6411560026696CB600B776CB /* FriendCollectionViewCell.swift */,
 				6411560226696D1400B776CB /* FriendViewController.swift */,
+				668BB6B22669B85A003B253D /* RoundButton.swift */,
+				668BB6B42669BA3A003B253D /* RoundTextField.swift */,
+				668BB6B62669C108003B253D /* PostViewController.swift */,
 			);
 			path = "song-swap";
 			sourceTree = "<group>";
@@ -229,12 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668BB6B72669C108003B253D /* PostViewController.swift in Sources */,
 				6411560126696CB600B776CB /* FriendCollectionViewCell.swift in Sources */,
 				66948010264CF8850030F4F5 /* LoginViewController.swift in Sources */,
 				93F5DBB826622F9B0068666C /* CreatePostTableViewCell.swift in Sources */,
+				668BB6B52669BA3A003B253D /* RoundTextField.swift in Sources */,
 				660CD4CA264CDD3000CBF0B7 /* ViewController.swift in Sources */,
 				660CD4C6264CDD3000CBF0B7 /* AppDelegate.swift in Sources */,
 				660CD4C8264CDD3000CBF0B7 /* SceneDelegate.swift in Sources */,
+				668BB6B32669B85A003B253D /* RoundButton.swift in Sources */,
 				6411560326696D1400B776CB /* FriendViewController.swift in Sources */,
 				93C6AD872653839A00B71098 /* CreatePostViewController.swift in Sources */,
 				93C6AD892653843000B71098 /* FeedViewController.swift in Sources */,
