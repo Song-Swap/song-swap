@@ -15,7 +15,7 @@ class CreatePostViewController: UIViewController, UISearchBarDelegate, UITableVi
     @IBOutlet var tableView: UITableView!
     
     var tableItems = [NSDictionary]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,7 +64,6 @@ class CreatePostViewController: UIViewController, UISearchBarDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected cell")
         performSegue(withIdentifier: "createToIndividual", sender: indexPath.row)
     }
     
@@ -101,4 +100,7 @@ class CreatePostViewController: UIViewController, UISearchBarDelegate, UITableVi
         return cell
     }
     
+    @IBAction func onCancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
