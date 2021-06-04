@@ -10,6 +10,8 @@
 		2EF4022D2669EE950068896D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4022C2669EE950068896D /* PostCell.swift */; };
 		6411560126696CB600B776CB /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6411560026696CB600B776CB /* FriendCollectionViewCell.swift */; };
 		6411560326696D1400B776CB /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6411560226696D1400B776CB /* FriendViewController.swift */; };
+		641156052669BF5500B776CB /* AddFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641156042669BF5500B776CB /* AddFriendsViewController.swift */; };
+		641156072669BF7300B776CB /* AddFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641156062669BF7300B776CB /* AddFriendsTableViewCell.swift */; };
 		660CD4C6264CDD3000CBF0B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CD4C5264CDD3000CBF0B7 /* AppDelegate.swift */; };
 		660CD4C8264CDD3000CBF0B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CD4C7264CDD3000CBF0B7 /* SceneDelegate.swift */; };
 		660CD4CA264CDD3000CBF0B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CD4C9264CDD3000CBF0B7 /* ViewController.swift */; };
@@ -32,6 +34,8 @@
 		2EF4022C2669EE950068896D /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		6411560026696CB600B776CB /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		6411560226696D1400B776CB /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		641156042669BF5500B776CB /* AddFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsViewController.swift; sourceTree = "<group>"; };
+		641156062669BF7300B776CB /* AddFriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsTableViewCell.swift; sourceTree = "<group>"; };
 		660CD4C2264CDD3000CBF0B7 /* song-swap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "song-swap.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		660CD4C5264CDD3000CBF0B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		660CD4C7264CDD3000CBF0B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				93F5DBB726622F9B0068666C /* CreatePostTableViewCell.swift */,
 				6411560026696CB600B776CB /* FriendCollectionViewCell.swift */,
 				6411560226696D1400B776CB /* FriendViewController.swift */,
+				641156042669BF5500B776CB /* AddFriendsViewController.swift */,
+				641156062669BF7300B776CB /* AddFriendsTableViewCell.swift */,
 				668BB6B22669B85A003B253D /* RoundButton.swift */,
 				668BB6B42669BA3A003B253D /* RoundTextField.swift */,
 				668BB6B62669C108003B253D /* PostViewController.swift */,
@@ -250,9 +256,11 @@
 				660CD4CA264CDD3000CBF0B7 /* ViewController.swift in Sources */,
 				660CD4C6264CDD3000CBF0B7 /* AppDelegate.swift in Sources */,
 				660CD4C8264CDD3000CBF0B7 /* SceneDelegate.swift in Sources */,
+				641156052669BF5500B776CB /* AddFriendsViewController.swift in Sources */,
 				668BB6B32669B85A003B253D /* RoundButton.swift in Sources */,
 				6411560326696D1400B776CB /* FriendViewController.swift in Sources */,
 				93C6AD872653839A00B71098 /* CreatePostViewController.swift in Sources */,
+				641156072669BF7300B776CB /* AddFriendsTableViewCell.swift in Sources */,
 				93C6AD892653843000B71098 /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,8 @@
 
 import UIKit
 import Parse
+import Alamofire
+import AlamofireImage
 
 class FriendViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -18,7 +20,9 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
         // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         //query friends table for friends of current user
         let query = PFQuery(className: "Friends")
         let user_id = PFUser.current()
@@ -31,11 +35,9 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
                     if friends != nil {
                         self.friends = friends!
                         self.collectionView.reloadData()
-                        print(friends)
                     }
-                }
+            }
     }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return friends.count
     }
@@ -47,15 +49,27 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
         let friend = friendObject["friend"] as! PFUser
 
         cell.username.text = friend.username
+        
+        if(friend["profilePicture"] != nil)  {
+            let imageFile = friend["profilePicture"] as! PFFileObject
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            cell.userImage.af.setImage(withURL: url)
+        } else {
+            cell.userImage.image = nil
+        }
+        
         cell.userImage.layer.masksToBounds = true
         cell.userImage.layer.cornerRadius = cell.userImage.bounds.width / 2
         cell.userImage.layer.borderWidth = 3
         cell.userImage.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0).cgColor
-        print(friend)
         
         return cell
     }
 
+    @IBAction func onAddFriends(_ sender: Any) {
+        self.performSegue(withIdentifier: "addFriendsModal", sender: self)
+    }
     /*
     // MARK: - Navigation
 
