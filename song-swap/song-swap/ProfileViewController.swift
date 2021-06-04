@@ -9,13 +9,17 @@ import UIKit
 import AlamofireImage
 import Parse
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var profilePicture: UIImageView!
     @IBOutlet var followersCount: UILabel!
     @IBOutlet var followingCount: UILabel!
     @IBOutlet var usernameLabel: UILabel!
     
+    @IBOutlet var tableView: UITableView!
+    
+    var posts = [PFObject]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,17 +35,43 @@ class ProfileViewController: UIViewController {
         
         self.navigationItem.title = "@" + (PFUser.current()?.username)!
         usernameLabel.text = "@" + (PFUser.current()?.username)!
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        loadPosts()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func loadPosts() {
+        let query = PFQuery(className: "Posts")
+        query.whereKey("author", equalTo: PFUser.current()!)
+        query.limit = 20
+        
+        query.findObjectsInBackground { (posts, error) in
+            if posts != nil{
+                self.posts = posts!
+                self.tableView.reloadData()
+            }
+        }
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfilePostCell") as! ProfilePostCell
 
+        let post = posts[indexPath.row]
+        cell.postUsername.text = PFUser.current()?.username
+        cell.postCaption.text = post["caption"] as? String
+        cell.artistLabel.text = post["artist"] as? String
+        cell.songTitle.text = post["song_title"] as? String
+
+        let songURL = URL(string:(post["URL"] as! String))!
+        cell.albumImage.af.setImage(withURL: songURL)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count;
+    }
+    
 }

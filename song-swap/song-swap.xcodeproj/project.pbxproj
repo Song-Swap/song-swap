@@ -26,6 +26,7 @@
 		77B978C924B8E8AE172E5562 /* Pods_song_swap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D44CF43B49B6D2E5491B173 /* Pods_song_swap.framework */; };
 		93118866266A82CC0058CE32 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93118865266A82CC0058CE32 /* SetupViewController.swift */; };
 		93118868266A91AB0058CE32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93118867266A91AB0058CE32 /* ProfileViewController.swift */; };
+		938F9089266AA34A008CA8DD /* ProfilePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F9088266AA34A008CA8DD /* ProfilePostCell.swift */; };
 		93C6AD872653839A00B71098 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6AD862653839A00B71098 /* CreatePostViewController.swift */; };
 		93C6AD892653843000B71098 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6AD882653843000B71098 /* FeedViewController.swift */; };
 		93F5DBB826622F9B0068666C /* CreatePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F5DBB726622F9B0068666C /* CreatePostTableViewCell.swift */; };
@@ -54,6 +55,7 @@
 		6694800F264CF8850030F4F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93118865266A82CC0058CE32 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		93118867266A91AB0058CE32 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		938F9088266AA34A008CA8DD /* ProfilePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostCell.swift; sourceTree = "<group>"; };
 		93C6AD862653839A00B71098 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		93C6AD882653843000B71098 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		93F5DBB726622F9B0068666C /* CreatePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostTableViewCell.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				2EF4022C2669EE950068896D /* PostCell.swift */,
 				93118865266A82CC0058CE32 /* SetupViewController.swift */,
 				93118867266A91AB0058CE32 /* ProfileViewController.swift */,
+				938F9088266AA34A008CA8DD /* ProfilePostCell.swift */,
 			);
 			path = "song-swap";
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				668BB6B72669C108003B253D /* PostViewController.swift in Sources */,
+				938F9089266AA34A008CA8DD /* ProfilePostCell.swift in Sources */,
 				6411560126696CB600B776CB /* FriendCollectionViewCell.swift in Sources */,
 				2EF4022D2669EE950068896D /* PostCell.swift in Sources */,
 				66948010264CF8850030F4F5 /* LoginViewController.swift in Sources */,

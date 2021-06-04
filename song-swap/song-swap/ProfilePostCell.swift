@@ -9,6 +9,12 @@ import UIKit
 
 class ProfilePostCell: UITableViewCell {
 
+    @IBOutlet var albumImage: UIImageView!
+    @IBOutlet var songTitle: UILabel!
+    @IBOutlet var artistLabel: UILabel!
+    @IBOutlet var postUsername: UILabel!
+    @IBOutlet var postCaption: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
