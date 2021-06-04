@@ -7,6 +7,7 @@
 
 import UIKit
 import Parse
+import AlamofireImage
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -50,6 +51,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.usernameLabel.text = user.username
         cell.captionLabel.text = post["caption"] as? String
         cell.postLabel.text = post["song_title"] as? String
+        cell.postLabel.font = UIFont(name: "Avenir-Black", size: 22)
         let songURL = URL(string:(post["URL"] as! String))!
         cell.photoView.af.setImage(withURL: songURL)
         
