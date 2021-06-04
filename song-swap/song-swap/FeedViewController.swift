@@ -19,6 +19,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.navigationItem.title = "Home"
     }
     
     override func viewDidAppear(_ animated: Bool) {
