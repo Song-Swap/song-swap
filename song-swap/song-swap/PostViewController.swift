@@ -13,6 +13,7 @@ import Parse
 class PostViewController: UIViewController, UITextViewDelegate {
     
     var item: NSDictionary = NSDictionary()
+    
     @IBOutlet weak var SongTitle: UILabel!
     @IBOutlet weak var Artist: UILabel!
     @IBOutlet weak var AlbumCover: UIImageView!
@@ -65,13 +66,15 @@ class PostViewController: UIViewController, UITextViewDelegate {
         post["song_title"] = SongTitle.text!
         post["artist"] = Artist.text!
         post["URL"] = ((item["album"] as! NSDictionary)["images"] as! [NSDictionary])[1]["url"] as! String
-
+        post["spotify_url"] = (item["external_urls"] as! NSDictionary)["spotify"] as! String
+        
         post.saveInBackground{ (success, error) in
             if success {
                 if let first = self.presentingViewController,
                     let second = first.presentingViewController {
                             first.view.isHidden = true
-                                second.dismiss(animated: true)
+                            second.dismiss(animated: true)
+                            self.performSegue(withIdentifier: "unwindCreatePostToFeed", sender: self)
                  }
             } else {
                 print("error!")

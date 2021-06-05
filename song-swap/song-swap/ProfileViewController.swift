@@ -40,11 +40,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         
         loadPosts()
+        loadFriends()
     }
     
     func loadPosts() {
         let query = PFQuery(className: "Posts")
         query.whereKey("author", equalTo: PFUser.current()!)
+        query.order(byDescending: "createdAt")
         query.limit = 20
         
         query.findObjectsInBackground { (posts, error) in
@@ -55,6 +57,30 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    func loadFriends() {
+        let queryFollowing = PFQuery(className: "Friends")
+        queryFollowing.whereKey("user", equalTo: PFUser.current()!)
+        queryFollowing.findObjectsInBackground { users, error in
+            if users != nil {
+                self.followingCount.text = String((users! as [PFObject]).count)
+            }
+        }
+        
+        let queryFollowers = PFQuery(className: "Friends")
+        queryFollowers.whereKey("friend", equalTo: PFUser.current()!)
+        queryFollowers.findObjectsInBackground { users, error in
+            if users != nil {
+                self.followersCount.text = String((users! as [PFObject]).count)
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ProfilePostCell
+        UIApplication.shared.open(cell.spotifyURL)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfilePostCell") as! ProfilePostCell
 
@@ -63,10 +89,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.postCaption.text = post["caption"] as? String
         cell.artistLabel.text = post["artist"] as? String
         cell.songTitle.text = post["song_title"] as? String
-
         let songURL = URL(string:(post["URL"] as! String))!
         cell.albumImage.af.setImage(withURL: songURL)
-        
+
+        cell.spotifyURL = URL(string: (post["spotify_url"] as? String)!)
         return cell
     }
     
@@ -74,4 +100,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         return posts.count;
     }
     
+    @IBAction func onClickLogout(_ sender: Any) {
+        PFUser.logOut()
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else {return}
+        delegate.window?.rootViewController = loginViewController
+    }
 }

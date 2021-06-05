@@ -20,9 +20,17 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
         // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didAddFriends),
+                                                         name: NSNotification.Name(rawValue: "didAddFriends"),
+                                                       object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        loadFriends()
+    }
+    
+    func loadFriends() {
         //query friends table for friends of current user
         let query = PFQuery(className: "Friends")
         let user_id = PFUser.current()
@@ -38,6 +46,7 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
                     }
             }
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return friends.count
     }
@@ -70,14 +79,13 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBAction func onAddFriends(_ sender: Any) {
         self.performSegue(withIdentifier: "addFriendsModal", sender: self)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let destination = segue.destination as! AddFriendsViewController
+        destination.presentationController?.delegate = destination as UIAdaptivePresentationControllerDelegate
     }
-    */
-
+    
+    @objc func didAddFriends() {
+        loadFriends()
+    }
 }

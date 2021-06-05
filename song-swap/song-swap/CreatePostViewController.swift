@@ -96,7 +96,6 @@ class CreatePostViewController: UIViewController, UISearchBarDelegate, UITableVi
         cell.songArtist.text = artistsText.joined(separator: ", ")
         
         cell.spotifyURL = URL(string: (songInfo["external_urls"] as! NSDictionary)["spotify"] as! String)
-
         return cell
     }
     

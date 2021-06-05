@@ -35,9 +35,9 @@ class AddFriendsTableViewCell: UITableViewCell {
     
     @IBAction func onUnfriend(_ sender: Any) {
         let query = PFQuery(className: "Friends")
-        query.whereKey("user", equalTo: PFUser.current())
-        query.whereKey("friend", equalTo: user)
-        
+        query.whereKey("user", equalTo: PFUser.current()!)
+        query.whereKey("friend", equalTo: user!)
+
         query.findObjectsInBackground { (friends:[PFObject]?, error) in
             PFObject.deleteAll(inBackground: friends)
         }
@@ -67,5 +67,4 @@ class AddFriendsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

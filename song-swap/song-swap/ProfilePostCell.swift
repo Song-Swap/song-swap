@@ -14,6 +14,8 @@ class ProfilePostCell: UITableViewCell {
     @IBOutlet var artistLabel: UILabel!
     @IBOutlet var postUsername: UILabel!
     @IBOutlet var postCaption: UILabel!
+    
+    var spotifyURL: URL!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +27,4 @@ class ProfilePostCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

@@ -25,7 +25,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        loadPosts()
+    }
+    
+    func loadPosts() {
         let query = PFQuery(className: "Posts")
         query.includeKey("author")
         query.order(byDescending: "createdAt")
@@ -43,6 +46,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return posts.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! PostCell
+        UIApplication.shared.open(cell.spotifyURL)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
         
@@ -55,9 +64,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.postLabel.font = UIFont(name: "Avenir-Black", size: 22)
         let songURL = URL(string:(post["URL"] as! String))!
         cell.photoView.af.setImage(withURL: songURL)
-        
-        cell.spotifyURL = URL(string: ((post["URL"] as? String)!))
-        
+
+        cell.spotifyURL = URL(string: (post["spotify_url"] as? String)!)
         return cell
     }
 
@@ -65,5 +73,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func onPostButton(_ sender: Any) {
         self.performSegue(withIdentifier: "createPostModal", sender: self)
     }
-
+    
+    @IBAction func unwindCreatePostToFeed(sender: UIStoryboardSegue)
+    {
+        loadPosts()
+    }
 }

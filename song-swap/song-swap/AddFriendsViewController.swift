@@ -11,8 +11,7 @@ import Parse
 class AddFriendsViewController: UIViewController,
     UISearchBarDelegate,
     UITableViewDelegate,
-    UITableViewDataSource{
-    
+    UITableViewDataSource, UIAdaptivePresentationControllerDelegate{
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -25,12 +24,12 @@ class AddFriendsViewController: UIViewController,
         searchBar.searchBarStyle = .minimal
         searchBar.placeholder = "Find a Friend"
         searchBar.delegate = self
+        searchBar.autocapitalizationType = .none
 
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorColor = UIColor.clear
         tableView.keyboardDismissMode = .onDrag
-        // Do any additional setup after loading the view.
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -77,7 +76,7 @@ class AddFriendsViewController: UIViewController,
         cell.userPhoto.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0).cgColor
         
         let query = PFQuery(className: "Friends")
-        query.whereKey("user", equalTo: PFUser.current())
+        query.whereKey("user", equalTo: PFUser.current()!)
         query.whereKey("friend", equalTo: user)
         query.findObjectsInBackground { (friends, error) in
                     if friends != [] {
@@ -105,15 +104,10 @@ class AddFriendsViewController: UIViewController,
     @IBAction func onCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didAddFriends"),
+                                      object: nil)
     }
-    */
-
+    
 }
